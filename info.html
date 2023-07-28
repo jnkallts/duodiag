@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+
+  <html lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Duo Diagnosticsware</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="stylesheet" href="infostyle.css">
+
+</head>
+
+<body>
+  <div class="city">
+    <p>Kuala Lumpur, MY</p>
+  </div>
+
+  <div class="duodiag">
+    <h1>
+      <span id="typewriter"></span>
+      <span id="cursor">|</span>
+    </h1>
+    <script>
+        function sleep(ms) {
+          return new Promise((resolve) => setTimeout(resolve,ms));
+          }
+
+        const phrases = ["DUO DIAGNOSTICSWARE"];
+        const el = document.getElementById("typewriter");
+
+        let sleepTime = 100;
+
+        let curPhraseIndex = 0;
+
+        const writeLoop = async () => {
+          while (true) {
+            let curWord = phrases[curPhraseIndex];
+        
+        for (let i = 0; i < curWord.length; i++) {
+          el.innerText = curWord.substring(0, i + 1);
+          await sleep(sleepTime);
+        }
+
+        await sleep (sleepTime * 10);
+
+        for (let i = curWord.length; i > 0; i--) {
+          el.innerText = curWord.substring(0, i - 1);
+          await sleep(sleepTime);
+        }
+
+        await sleep (sleepTime * 5);
+      }
+    };
+
+    writeLoop();
+    </script>
+  </div>
+
+  <div class="navbar">
+    <ul>
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="project.html">PROJECT</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+  </div>
+
+  <div class="desc">
+    <p>Duo Diagnosticsware is an organisation that provide medical diagnostics software to helps improvise workflow in hospitals and deliver satisfactory diagnosis for patients.</p>
+  </div>
+</body>
+
+</html>

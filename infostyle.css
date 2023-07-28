@@ -1,0 +1,104 @@
+body {
+  background-color: rgb(20, 20, 20);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.city, .navbar, .desc {
+  color: azure;
+  font-size: 13px;
+  font-weight: lighter;
+}
+
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: grey;
+  margin: auto;
+  text-align: center;
+  padding-top: 250px;
+  padding-bottom: 250px;
+}
+
+#typewriter {
+  color: grey;
+  font-weight: bold;
+}
+
+#cursor {
+  color: grey;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 100%;
+   }
+   50% {
+    opacity: 0%;
+   }
+}
+
+.city {
+  position: absolute;
+  bottom: 90px;
+  right: 60px;
+}
+
+ul {
+  list-style-type: none;
+  overflow: hidden;
+  position: absolute;
+  left: 30px;
+  bottom: 130px;
+}
+
+li {
+  display: inline;
+  text-align: center;
+  padding: 10px;
+}
+
+.desc {
+  height: 100px;
+  width: 600px;
+  position: absolute;
+  bottom: 50px;
+  left: 60px;
+}
+
+a:link, a:visited, a:active {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: lighter;
+  text-align: center;
+  color: azure;
+  text-decoration: line-through;
+}
+
+a:hover {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+  color: grey;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 414px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  .city {
+    position: absolute;
+    top: 30px;
+    width: 50%;
+  }
+
+  .desc {
+    width: 70%;
+    text-align: justify;
+  }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+
+  <html lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Duo Diagnosticsware</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="stylesheet" href="indexstyle.css">
+
+</head>
+
+<body>
+  <div id="datetime" class="datetime">
+    <script>
+      var date = new Date();
+      var current_time = date.getHours() + " " + date.getMinutes();
+      var current_date = (date.getMonth()+1) + " " + date.getDate() + " " + date.getFullYear();
+      var date_time = current_time + " . " + current_date;
+      document.getElementById("datetime").innerHTML = date_time;
+    </script>
+  </div>
+
+  <div class="duodiag">
+    <h1>
+      <span id="typewriter"></span>
+      <span id="cursor">|</span>
+    </h1>
+    <script>
+        function sleep(ms) {
+          return new Promise((resolve) => setTimeout(resolve,ms));
+          }
+
+        const phrases = ["DUO DIAGNOSTICSWARE"];
+        const el = document.getElementById("typewriter");
+
+        let sleepTime = 100;
+
+        let curPhraseIndex = 0;
+
+        const writeLoop = async () => {
+          while (true) {
+            let curWord = phrases[curPhraseIndex];
+        
+        for (let i = 0; i < curWord.length; i++) {
+          el.innerText = curWord.substring(0, i + 1);
+          await sleep(sleepTime);
+        }
+
+        await sleep (sleepTime * 10);
+
+        for (let i = curWord.length; i > 0; i--) {
+          el.innerText = curWord.substring(0, i - 1);
+          await sleep(sleepTime);
+        }
+
+        await sleep (sleepTime * 5);
+      }
+    };
+
+    writeLoop();
+    </script>
+  </div>
+
+  <div class="enter">
+    <a href="info.html" title="INTO THE PORTAL">ENTER</a>
+  </div>
+</body>
+
+</html>
